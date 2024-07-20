@@ -1,9 +1,18 @@
-import React from "react";
-
+import React, { useState } from "react";
+import Navbar from "./Component/Navbar";
+import Contact from "./Component/Contact";
+import Home from "./Component/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <h1>Starting a new Project</h1>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />{" "}
+        </Routes>
+      </Router>
     </>
   );
 }
